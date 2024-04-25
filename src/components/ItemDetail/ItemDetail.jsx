@@ -45,7 +45,7 @@ const ItemDetail = ({ categoria, nombre, descripcion, precio, img, stock }) => {
                   <div className="carousel-item active">
                     <img src={img} className="d-block w-100" alt="..." />
                   </div>
-                  <div className="carousel-item active">
+                  <div className="carousel-item">
                     <img src={img} className="d-block w-100" alt="..." />
                   </div>
                   <div className="carousel-item">
