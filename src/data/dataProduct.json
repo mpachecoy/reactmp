@@ -1,0 +1,146 @@
+[
+  {
+    "id": 1,
+    "nombre": "Mesa Nordica",
+    "precio": 9125,
+    "img": "http://dummyimage.com/187x100.png/dddddd/000000",
+    "descripcion": "Mesa Nordica Pinotea, 1,50nts x 0,80mts",
+    "categoria": "Comedor",
+    "stock":40
+  },
+  {
+    "id": 2,
+    "nombre": "Silla Caroba",
+    "precio": 8396,
+    "img": "http://dummyimage.com/132x100.png/ff4444/ffffff",
+    "descripcion": "Silla clavada, encolada y espigada. Madera de Roble",
+    "categoria": "Comedor",
+    "stock":40
+  },
+  {
+    "id": 3,
+    "nombre": "Mesa Artahus",
+    "precio": 9267,
+    "img": "http://dummyimage.com/101x100.png/5fa2dd/ffffff",
+    "descripcion": "Mesa Artahus de Ibira Pyta, 1,80mts x 0,80mts ",
+    "categoria": "Comedor",
+    "stock":40
+  },
+  {
+    "id": 4,
+    "nombre": "Silla Garupa",
+    "precio": 1704,
+    "img": "http://dummyimage.com/142x100.png/ff4444/ffffff",
+    "descripcion": "Silla Garupa, Madera Algarrobo",
+    "categoria": "Comedor",
+    "stock":40
+  },
+  {
+    "id": 5,
+    "nombre": "Placar 3 Puertas",
+    "precio": 6102,
+    "img": "http://dummyimage.com/235x100.png/dddddd/000000",
+    "descripcion": "Placar 3 Puertas, 1,50mts x 2,00mts",
+    "categoria": "Dormitorio",
+    "stock":40
+  },
+  {
+    "id": 6,
+    "nombre": "Comoda",
+    "precio": 9891,
+    "img": "http://dummyimage.com/113x100.png/5fa2dd/ffffff",
+    "descripcion": "Comoda Clasica 4 Cajones",
+    "categoria": "Dormitorio",
+    "stock":40
+  },
+  {
+    "id": 7,
+    "nombre": "Sillon Club",
+    "precio": 4706,
+    "img": "http://dummyimage.com/122x100.png/5fa2dd/ffffff",
+    "descripcion": "Sillon Club, 1,80mts Tela de Pana",
+    "categoria": "Living",
+    "stock":40
+  },
+  {
+    "id": 8,
+    "nombre": "Futon 3 Cuerpos",
+    "precio": 7474,
+    "img": "http://dummyimage.com/170x100.png/cc0000/ffffff",
+    "descripcion": "Futon 3 Cuerpos, Madera de Pino",
+    "categoria": "Living",
+    "stock":40
+  },
+  {
+    "id": 9,
+    "nombre": "Mesa Ratona",
+    "precio": 5810,
+    "img": "http://dummyimage.com/106x100.png/5fa2dd/ffffff",
+    "descripcion": "Mesa Mater, Madera de Roble",
+    "categoria": "Living",
+    "stock":40
+  },
+  {
+    "id": 10,
+    "nombre": "Mesa Plegable",
+    "precio": 6498,
+    "img": "http://dummyimage.com/181x100.png/dddddd/000000",
+    "descripcion": "Mesa Plegable, Tapa tablero de Guayaibi",
+    "categoria": "Aire Libre",
+    "stock":40
+  },
+  {
+    "id": 11,
+    "nombre": "Silla Plegable",
+    "precio": 6692,
+    "img": "http://dummyimage.com/190x100.png/ff4444/ffffff",
+    "descripcion": "Silla Plegable Premiun",
+    "categoria": "Aire Libre",
+    "stock":40
+  },
+  {
+    "id": 12,
+    "nombre": "Silon Acapulco",
+    "precio": 1330,
+    "img": "http://dummyimage.com/244x100.png/5fa2dd/ffffff",
+    "descripcion": "Sillon Acapulco, Sintetico",
+    "categoria": "Aire Libre",
+    "stock":40
+  },
+  {
+    "id": 13,
+    "nombre": "Camastro",
+    "precio": 9131,
+    "img": "http://dummyimage.com/110x100.png/5fa2dd/ffffff",
+    "descripcion": "Camastro Urunday",
+    "categoria": "Aire Libre",
+    "stock":40
+  },
+  {
+    "id": 14,
+    "nombre": "Bajo Mesada 1,40mts",
+    "precio": 8899,
+    "img": "http://dummyimage.com/210x100.png/dddddd/000000",
+    "descripcion": "Bajo Mesada, 1,40mts x 0,80mts x 0,60mts",
+    "categoria": "Cocina",
+    "stock":40
+  },
+  {
+    "id": 15,
+    "nombre": "Alacena 1,40mts",
+    "precio": 8899,
+    "img": "http://dummyimage.com/210x100.png/dddddd/000000",
+    "descripcion": "Alacena 1,40mts x 0,60mts x 0,30mts",
+    "categoria": "Cocina",
+    "stock":40
+  },
+  {
+    "id": 16,
+    "nombre": "Despensero 2 Puertas",
+    "precio": 8899,
+    "img": "http://dummyimage.com/210x100.png/dddddd/000000",
+    "descripcion": "Despensero 2 Puertas con Cajones",
+    "categoria": "Cocina",
+    "stock":40
+  }
+]

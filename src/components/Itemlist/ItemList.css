@@ -1,0 +1,35 @@
+.itemlist-container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.titulo {
+  font-size: 25px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.card-container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+}
+
+.card-detail{
+  padding-bottom: 20px;
+}
+
+@media screen and (max-width: 960px) {
+  .card-container{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media screen and (max-width: 480px){
+  .card-container{
+    display: flex;
+    flex-direction: column;
+  }
+}
