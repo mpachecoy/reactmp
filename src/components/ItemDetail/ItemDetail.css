@@ -11,6 +11,10 @@
     width: 50%;
     height: 400px;
 }
+.carrusel-1 img{
+    height: 400px;
+}
+
 .card-description{
     width: 50%;
     display: flex;

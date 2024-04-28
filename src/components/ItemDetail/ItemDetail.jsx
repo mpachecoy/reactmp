@@ -18,30 +18,13 @@ const ItemDetail = ({ categoria, nombre, descripcion, precio, img, stock }) => {
         <Col className="">
           <Card className="card-detail">
             <div className="card-img">
-              <div id="carouselExampleIndicators" className="carousel slide">
-                <div className="carousel-indicators">
-                  <button
-                    type="button"
-                    data-bs-target="#carouselExampleIndicators"
-                    data-bs-slide-to="0"
-                    class="active"
-                    aria-current="true"
-                    aria-label="Slide 1"
-                  ></button>
-                  <button
-                    type="button"
-                    data-bs-target="#carouselExampleIndicators"
-                    data-bs-slide-to="1"
-                    aria-label="Slide 2"
-                  ></button>
-                  <button
-                    type="button"
-                    data-bs-target="#carouselExampleIndicators"
-                    data-bs-slide-to="2"
-                    aria-label="Slide 3"
-                  ></button>
-                </div>
-                <div className="carousel-inner">
+              <div id="carouselExampleIndicators" className="carousel slide" data-ride="carousel">
+                <ol class="carousel-indicators">
+                  <li data-target="#carouselExampleIndicators" data-slide-to="0" className="active"></li>
+                  <li data-target="#carouselExampleIndicators" data-slide-to="1" ></li>
+                  <li data-target="#carouselExampleIndicators" data-slide-to="2" ></li>
+                </ol>
+                <div className="carousel-inner carrusel-1">
                   <div className="carousel-item active">
                     <img src={img} className="d-block w-100" alt="..." />
                   </div>
@@ -52,29 +35,13 @@ const ItemDetail = ({ categoria, nombre, descripcion, precio, img, stock }) => {
                     <img src={img} className="d-block w-100" alt="..." />
                   </div>
                 </div>
-                <button
-                  className="carousel-control-prev"
-                  type="button"
-                  data-bs-target="#carouselExampleIndicators"
-                  data-bs-slide="prev"
-                >
-                  <span
-                    className="carousel-control-prev-icon"
-                    aria-hidden="true"
-                  ></span>
-                  <span className="visually-hidden">Previous</span>
+                <button className="carousel-control-prev" type="button" data-target="#carouselExampleIndicators" data-slide="prev">
+                  <span className="carousel-control-prev-icon" aria-hidden="true" ></span>
+                  <span className="sr-only">Previous</span>
                 </button>
-                <button
-                  className="carousel-control-next"
-                  type="button"
-                  data-bs-target="#carouselExampleIndicators"
-                  data-bs-slide="next"
-                >
-                  <span
-                    className="carousel-control-next-icon"
-                    aria-hidden="true"
-                  ></span>
-                  <span className="visually-hidden">Next</span>
+                <button className="carousel-control-next" type="button" data-target="#carouselExampleIndicators" data-slide="next">
+                  <span className="carousel-control-next-icon" aria-hidden="true"></span>
+                  <span className="sr-only">Next</span>
                 </button>
               </div>
             </div>
@@ -87,11 +54,7 @@ const ItemDetail = ({ categoria, nombre, descripcion, precio, img, stock }) => {
                   <Card.Text>${precio}</Card.Text>
                 </div>
                 <hr />
-                <ItemCount
-                  className="item-count"
-                  stock={stock}
-                  initialValue={1}
-                  onAdd={onAdd}
+                <ItemCount className="item-count" stock={stock} initialValue={1} onAdd={onAdd}
                 />
               </Card.Body>
             </div>
