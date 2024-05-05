@@ -6,13 +6,13 @@ import { useParams } from "react-router-dom";
 
 const ItemListContainer = () => {
   const [productos, setProductos] = useState([]);
+  const [loading, setLoading] = useState(true)
   const categoria = useParams().categoria;
 
   useEffect(() => {
-
+    setLoading(true)
     const dataProductos = getProducts()
-
-   dataProductos
+    dataProductos
       .then((res) => {
         if (categoria){
           setProductos(res.filter((prod) => prod.categoria === categoria));
@@ -21,11 +21,20 @@ const ItemListContainer = () => {
         }
       })
       .catch((error) => console.log(error))
+      .finally(() => setLoading(false))
   }, [categoria]);
 
   return (
       <div className="item-container">
-        <ItemList productos={productos}></ItemList>
+        {
+          loading ?
+          <div className="spinner-border" role="status">
+            <span className="sr-only">Loading...</span>
+          </div>
+          :
+          <ItemList productos={productos}></ItemList>
+        }
+
       </div>
   );
 };

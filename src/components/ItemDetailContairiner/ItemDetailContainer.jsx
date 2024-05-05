@@ -1,26 +1,41 @@
-import React, { useEffect, useState } from 'react';
-import ItemDetail from '../ItemDetail/ItemDetail';
+import React, { useEffect, useState } from "react";
+import ItemDetail from "../ItemDetail/ItemDetail";
 import { getProductsById } from "../../data/asyncMock";
-import { useParams } from 'react-router-dom';
+import { useNavigate, useParams } from "react-router-dom";
 
+const ItemDetailContainer = ({}) => {
+  const [item, setItem] = useState(null);
+  const [loading, setLoading] = useState(true);
+  const id = useParams().id;
 
-const ItemDetailContainer = ( {} ) => {
+  const navigate = useNavigate();
 
-    const [item, setItem] = useState (null);
-    const id = useParams().id;
+  useEffect(() => {
+    setLoading(true)
+    getProductsById(Number(id))
+      .then((res) => {
+        if (!res) {
+          navigate("/*");
+        } else {
+          setItem(res);
+        }})
+      .catch((error) => console.log(error))
+      .finally(() => setLoading(false));
+  }, [id]);
 
-    useEffect(() => {
-        getProductsById(Number(id))
-            .then((res) =>{
-                setItem(res);
-            })
-    }, [id])
+  return(
 
-  return (
     <div>
-       {item && <ItemDetail {...item}/> } 
+      {
+        loading ?
+        <div className="spinner-border" role="status">
+          <span className="sr-only">Loading...</span>
+        </div>
+        :
+        (item && <ItemDetail {...item} />)
+      }       
     </div>
   )
-}
+};
 
-export default ItemDetailContainer
+export default ItemDetailContainer;

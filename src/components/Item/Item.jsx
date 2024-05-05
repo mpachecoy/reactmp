@@ -10,10 +10,10 @@ import "./Item.css"
 const Item = ({ nombre, precio, img, descripcion, categoria,id }) => {
 
   return (
-    <Container className="">
-      <Row>
-        <Col>
-          <Card >
+    <Container className="h-100">
+      <Row className="h-100">
+        <Col className="h-100">
+          <Card className="h-100">
             <Card.Img style={{height: "10rem",}} variant="top" src={img} />
             <Card.Body>
               <Card.Title>{nombre}</Card.Title>

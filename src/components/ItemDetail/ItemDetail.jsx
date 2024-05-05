@@ -1,5 +1,4 @@
 import React from "react";
-import Button from "react-bootstrap/Button";
 import Card from "react-bootstrap/Card";
 import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
@@ -7,19 +6,20 @@ import Col from "react-bootstrap/Col";
 import ItemCount from "../ItemCount/ItemCount";
 import "./ItemDetail.css";
 
-const ItemDetail = ({ categoria, nombre, descripcion, precio, img, stock }) => {
+const ItemDetail = ({ categoria, nombre, descripcion, precio, img, stock, id }) => {
+  
   const onAdd = (cantidad) => {
-    console.log(cantidad);
+    console.log( {cantidad, nombre, categoria, descripcion, precio, id} );
   };
 
   return (
     <Container className="contenedor">
-      <Row className="">
-        <Col className="">
+      <Row>
+        <Col>
           <Card className="card-detail">
             <div className="card-img">
               <div id="carouselExampleIndicators" className="carousel slide" data-ride="carousel">
-                <ol class="carousel-indicators">
+                <ol className="carousel-indicators">
                   <li data-target="#carouselExampleIndicators" data-slide-to="0" className="active"></li>
                   <li data-target="#carouselExampleIndicators" data-slide-to="1" ></li>
                   <li data-target="#carouselExampleIndicators" data-slide-to="2" ></li>
@@ -54,8 +54,7 @@ const ItemDetail = ({ categoria, nombre, descripcion, precio, img, stock }) => {
                   <Card.Text>${precio}</Card.Text>
                 </div>
                 <hr />
-                <ItemCount className="item-count" stock={stock} initialValue={1} onAdd={onAdd}
-                />
+                <ItemCount className="item-count" stock={stock} initialValue={1} onAdd={onAdd}/>
               </Card.Body>
             </div>
           </Card>

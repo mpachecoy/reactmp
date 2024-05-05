@@ -4,11 +4,11 @@ import "./ItemList.css";
 
 const ItemList = ({ productos }) => {
   return (
-    <div className="itemlist-container ">
-      <p className="titulo">Tienda LA CALANDRIA</p>
-      <div className="card-container">
+    <div className="itemlist-container h-100">
+      <p className="titulo">LA CALANDRIA</p>
+      <div className="card-container h-100">
         {productos.map((elem) => (
-          <div className="card-detail" key={elem.id}>
+          <div className="card-detail h-100" key={elem.id}>
             <Item {...elem} />
           </div>
         ))}
