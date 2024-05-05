@@ -6,7 +6,7 @@ import { useParams } from "react-router-dom";
 
 const ItemListContainer = () => {
   const [productos, setProductos] = useState([]);
-  const [loading, setLoading] = useState(true)
+  const [loading, setLoading] = useState(true);
   const categoria = useParams().categoria;
 
   useEffect(() => {
@@ -25,14 +25,16 @@ const ItemListContainer = () => {
   }, [categoria]);
 
   return (
-      <div className="item-container">
+      <div className="d-flex justify-content-center item-container">
         {
           loading ?
-          <div className="spinner-border" role="status">
-            <span className="sr-only">Loading...</span>
+          <div className="">
+            <div className="spinner-border m-5" role="status">
+              <span className="sr-only">Loading...</span>
+            </div>
           </div>
           :
-          <ItemList productos={productos}></ItemList>
+          (<ItemList productos={productos}></ItemList>)
         }
 
       </div>
