@@ -11,7 +11,7 @@ const useCounter = (initialValue, stock) => {
   }
 
   return {
-    count,
+    count, 
     incrementar,
     decrementar
   }

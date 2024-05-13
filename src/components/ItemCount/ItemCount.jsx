@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import "./ItemCount.css";
 import useCounter from "../../hooks/useCounter";
 import Button from "react-bootstrap/Button";
@@ -9,7 +9,7 @@ const ItemCount = ({ stock, initialValue, onAdd }) => {
 
   const handleAgregar = () => {
     onAdd(count);
-  };
+  }
 
   return (
     <Container className="item-count">

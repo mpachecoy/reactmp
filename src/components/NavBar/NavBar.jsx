@@ -21,7 +21,7 @@ const NavBar = () => {
                   <Link className='btn-nav btn btn-outline-secondary' to='/categoria/Living'>Living</Link>
                   <Link className='btn-nav btn btn-outline-secondary' to='/categoria/Aire Libre'>Aire Libre</Link>
                   <Link className='btn-nav btn btn-outline-secondary' to='/contacto'>Contacto</Link>                 
-                  <Link className='btn-carrito btn btn-outline-secondary' to='/'><CartWidget /></Link>       
+                  <Link className='btn-carrito btn btn-outline-secondary' to='/cart'><CartWidget /></Link>       
               </Nav>
             </Navbar.Collapse>
         </Container>

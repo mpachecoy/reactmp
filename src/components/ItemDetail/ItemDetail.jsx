@@ -1,16 +1,27 @@
-import React from "react";
+import React, { useContext } from "react";
 import Card from "react-bootstrap/Card";
 import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import ItemCount from "../ItemCount/ItemCount";
 import "./ItemDetail.css";
+import Context from "../context/CartContext";
+import { Link } from 'react-router-dom'
 
 const ItemDetail = ({ categoria, nombre, descripcion, precio, img, stock, id }) => {
   
+  const { addItem } = useContext(Context)
+
   const onAdd = (cantidad) => {
-    console.log( {cantidad, nombre, categoria, descripcion, precio, id} );
-  };
+    const item = {
+      id,
+      nombre,
+      precio,
+      stock,
+      img
+    }
+    addItem(item, cantidad)
+  }
 
   return (
     <Container className="contenedor">
@@ -55,6 +66,8 @@ const ItemDetail = ({ categoria, nombre, descripcion, precio, img, stock, id }) 
                 </div>
                 <hr />
                 <ItemCount className="item-count" stock={stock} initialValue={1} onAdd={onAdd}/>
+                <Link className='btn btn-outline-secondary' to='/cart'>Ir al Carrito</Link>
+                <Link className='btn btn-secondary' to='/'>SEGUIR COMPRANDO</Link>
               </Card.Body>
             </div>
           </Card>
