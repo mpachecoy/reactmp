@@ -27,8 +27,6 @@ const Checkout = () => {
         }))
     }
 
-    const navigate  = useNavigate()
-
     const validateEmails = () => {
         if(usuario.email === usuario.repeatedEmail) {
             setEmailMatch(true)
@@ -46,49 +44,7 @@ const Checkout = () => {
         return Object.keys(errors).length === 0
     }
 
-    const getOrder = async () => {
-        const isFormValid = validateForm()
-        validateEmails()
-        if(isFormValid && emailMatch){
-
-            const ordersCollection = collection(db, 'orders')
-
-            try {
-
-                for(const item of cart) {
-                    const productRef = doc(db,'productos', item.id)
-                    const productDoc = await getDoc(productRef)
-
-                    const currentStock = productDoc.data().stock
-
-                    if(currentStock >= item.cantidad) {
-                        await updateDoc(productRef, {
-                            stock: currentStock - item.cantidad
-                        })
-                    }else{
-                        console.log(`No hay stok para ${item.name}`)
-                    }
-                    const order = {
-                        buyer: usuario,
-                        cart: cart,
-                        total: getTotal()
-                    }
-        
-                    const orderDocRef = await addDoc(ordersCollection, order)
-                    Swal.fire({
-                        title: 'Gracias por tu compra',
-                        text: `El número de orden es: ${orderDocRef.id}`,
-                        icon: 'success',
-                        confirmButtonText: 'Cool'      
-                    }) 
-                }               
-            } catch (error) {
-                console.log(error)
-            }
-        }
-    }
-
-
+   
   return (
     <div>
 

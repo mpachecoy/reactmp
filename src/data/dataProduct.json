@@ -3,7 +3,7 @@
     "id": 1,
     "nombre": "Mesa Nordica",
     "precio": 9125,
-    "img": "./components/Media/",
+    "img": "http://dummyimage.com/181x100.png/dddddd/000000",
     "descripcion": "Mesa Nordica Pinotea, 1,50nts x 0,80mts",
     "categoria": "Comedor",
     "stock":40
@@ -12,7 +12,7 @@
     "id": 2,
     "nombre": "Silla Caroba",
     "precio": 8396,
-    "img": "./components/Media/SillaCaroba-1",
+    "img": "http://dummyimage.com/181x100.png/dddddd/000000",
     "descripcion": "Silla clavada, encolada y espigada. Madera de Roble",
     "categoria": "Comedor",
     "stock":40
@@ -21,7 +21,7 @@
     "id": 3,
     "nombre": "Mesa Artahus",
     "precio": 9267,
-    "img": "http://dummyimage.com/101x100.png/5fa2dd/ffffff",
+    "img": "http://dummyimage.com/181x100.png/dddddd/000000",
     "descripcion": "Mesa Artahus de Ibira Pyta, 1,80mts x 0,80mts ",
     "categoria": "Comedor",
     "stock":40
@@ -30,7 +30,7 @@
     "id": 4,
     "nombre": "Silla Garupa",
     "precio": 1704,
-    "img": "http://dummyimage.com/142x100.png/ff4444/ffffff",
+    "img": "http://dummyimage.com/181x100.png/dddddd/000000",
     "descripcion": "Silla Garupa, Madera Algarrobo",
     "categoria": "Comedor",
     "stock":40
@@ -48,7 +48,7 @@
     "id": 6,
     "nombre": "Comoda",
     "precio": 9891,
-    "img": "http://dummyimage.com/113x100.png/5fa2dd/ffffff",
+    "img": "http://dummyimage.com/181x100.png/dddddd/000000",
     "descripcion": "Comoda Clasica 4 Cajones",
     "categoria": "Dormitorio",
     "stock":40
@@ -57,7 +57,7 @@
     "id": 7,
     "nombre": "Sillon Club",
     "precio": 4706,
-    "img": "http://dummyimage.com/122x100.png/5fa2dd/ffffff",
+    "img": "http://dummyimage.com/181x100.png/dddddd/000000",
     "descripcion": "Sillon Club, 1,80mts Tela de Pana",
     "categoria": "Living",
     "stock":40
@@ -66,7 +66,7 @@
     "id": 8,
     "nombre": "Futon 3 Cuerpos",
     "precio": 7474,
-    "img": "http://dummyimage.com/170x100.png/cc0000/ffffff",
+    "img": "http://dummyimage.com/181x100.png/dddddd/000000",
     "descripcion": "Futon 3 Cuerpos, Madera de Pino",
     "categoria": "Living",
     "stock":40
@@ -75,7 +75,7 @@
     "id": 9,
     "nombre": "Mesa Ratona",
     "precio": 5810,
-    "img": "http://dummyimage.com/106x100.png/5fa2dd/ffffff",
+    "img": "http://dummyimage.com/181x100.png/dddddd/000000",
     "descripcion": "Mesa Mater, Madera de Roble",
     "categoria": "Living",
     "stock":40
@@ -111,7 +111,7 @@
     "id": 13,
     "nombre": "Camastro",
     "precio": 9131,
-    "img": "http://dummyimage.com/110x100.png/5fa2dd/ffffff",
+    "img": "http://dummyimage.com/181x100.png/dddddd/000000",
     "descripcion": "Camastro Urunday",
     "categoria": "Aire Libre",
     "stock":40
