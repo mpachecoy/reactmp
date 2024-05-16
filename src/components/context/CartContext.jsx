@@ -4,13 +4,6 @@ const Context = createContext()
 
 export const ContextProvider = ({ children }) => {
     const [cart, setCart] = useState([])
-    const addItemIndividual = (productoIndividualAgregaro, cantidad) => {
-        const nuevoProductoIndividual = {
-            cantidad,
-            ...productoIndividualAgregaro
-        }
-    }
-
 
     const addItem = (productoAgregado, cantidad) => {
         const nuevoProducto = {
@@ -51,10 +44,6 @@ export const ContextProvider = ({ children }) => {
         return total
     }
 
-    console.log(cart)
-    // console.log(getTotal())
-    // console.log(cantidadTotal())
-
   return (
     <Context.Provider
         value ={{
@@ -62,7 +51,8 @@ export const ContextProvider = ({ children }) => {
             addItem,
             removerItem, 
             getTotal, 
-            varciarCarrito
+            varciarCarrito,
+            cantidadTotal
         }} 
     >
         {children}

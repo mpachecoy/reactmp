@@ -10,22 +10,22 @@ import { Link } from 'react-router-dom';
 
 const NavBar = () => { 
   return (
-        <Navbar expand="lg" className="">
-        <Container className='menu'>
-            <Link to='/'><img className='logo' src= {logo} alt="" /></Link>
-            <Navbar.Toggle aria-controls="basic-navbar-nav" />
-            <Navbar.Collapse className='nav-collapse' id="basic-navbar-nav">
-              <Nav className="btn-navbar">
-                  <Link className='btn-nav btn btn-outline-secondary' to='/categoria/Comedor'>Comedor</Link>
-                  <Link className='btn-nav btn btn-outline-secondary' to='/categoria/Dormitorio'>Dormitorio</Link>
-                  <Link className='btn-nav btn btn-outline-secondary' to='/categoria/Living'>Living</Link>
-                  <Link className='btn-nav btn btn-outline-secondary' to='/categoria/Aire Libre'>Aire Libre</Link>
-                  <Link className='btn-nav btn btn-outline-secondary' to='/contacto'>Contacto</Link>                 
-                  <Link className='btn-carrito btn btn-outline-secondary' to='/cart'><CartWidget /></Link>       
-              </Nav>
-            </Navbar.Collapse>
-        </Container>
-        </Navbar>
+    <Navbar expand="lg" className="">
+    <Container className='menu'>
+        <Link to='/'><img className='logo' src= {logo} alt="" /></Link>
+        <Navbar.Toggle aria-controls="basic-navbar-nav" />
+        <Navbar.Collapse className='nav-collapse' id="basic-navbar-nav">
+          <Nav className="d-flex btn-navbar">
+              <Link className='btn-nav btn btn-outline-secondary' to='/categoria/Comedor'>Comedor</Link>
+              <Link className='btn-nav btn btn-outline-secondary' to='/categoria/Dormitorio'>Dormitorio</Link>
+              <Link className='btn-nav btn btn-outline-secondary' to='/categoria/Living'>Living</Link>
+              <Link className='btn-nav btn btn-outline-secondary' to='/categoria/Aire Libre'>Aire Libre</Link>
+              <Link className='btn-nav btn btn-outline-secondary' to='/contacto'>Contacto</Link>                 
+              <Link className='btn-nav btn btn-outline-secondary align-items-center' to='/cart'><CartWidget /></Link>       
+          </Nav>
+        </Navbar.Collapse>
+    </Container>
+    </Navbar>
   )
 }
 

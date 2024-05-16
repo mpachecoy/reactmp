@@ -1,7 +1,9 @@
 import React, { useEffect, useState } from "react";
 import ItemDetail from "../ItemDetail/ItemDetail";
 import { getProductsById } from "../../data/asyncMock";
-import { useNavigate, useParams } from "react-router-dom";
+import { Await, useNavigate, useParams } from "react-router-dom";
+import { doc, getDoc } from "firebase/firestore";
+import { db } from "../../config/firebase";
 
 const ItemDetailContainer = ({}) => {
   const [item, setItem] = useState(null);
@@ -9,19 +11,20 @@ const ItemDetailContainer = ({}) => {
   const id = useParams().id;
 
   const navigate = useNavigate();
-
   useEffect(() => {
     setLoading(true)
-    getProductsById(Number(id))
-      .then((res) => {
-        if (!res) {
-          navigate("/*");
-        } else {
-          setItem(res);
-        }})
-      .catch((error) => console.log(error))
-      .finally(() => setLoading(false));
-  }, [id]);
+    const getProducts = async() => {
+      const queryRef = doc(db, 'productos', id)
+      const response = await getDoc(queryRef)
+      const newItem = {
+        ...response.data(),
+        id: response.id
+      }
+      setItem(newItem)
+      setLoading(false)
+    }
+    getProducts()
+  }, [id])
 
   return(
     <div>
@@ -33,10 +36,10 @@ const ItemDetailContainer = ({}) => {
           </div>
         </div>
         :
-        (item && <ItemDetail {...item} />)
+        (item && <ItemDetail {...item} />) 
       }       
     </div>
   )
-};
+}
 
 export default ItemDetailContainer;

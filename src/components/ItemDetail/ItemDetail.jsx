@@ -6,12 +6,12 @@ import Col from "react-bootstrap/Col";
 import ItemCount from "../ItemCount/ItemCount";
 import "./ItemDetail.css";
 import Context from "../context/CartContext";
-import { Link } from 'react-router-dom'
+import { Link } from 'react-router-dom';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const ItemDetail = ({ categoria, nombre, descripcion, precio, img, stock, id }) => {
-  
   const { addItem } = useContext(Context)
-
   const onAdd = (cantidad) => {
     const item = {
       id,
@@ -21,6 +21,9 @@ const ItemDetail = ({ categoria, nombre, descripcion, precio, img, stock, id }) 
       img
     }
     addItem(item, cantidad)
+    toast.info("Agregaste un producto a tu carrito", {
+      theme: "colored"
+    })
   }
 
   return (
@@ -73,8 +76,9 @@ const ItemDetail = ({ categoria, nombre, descripcion, precio, img, stock, id }) 
           </Card>
         </Col>
       </Row>
+      <ToastContainer />
     </Container>
-  );
-};
+  )
+}
 
 export default ItemDetail;

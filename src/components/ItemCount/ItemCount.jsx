@@ -28,7 +28,7 @@ const ItemCount = ({ stock, initialValue, onAdd }) => {
         </div>
       </div>
     </Container>
-  );
-};
+  )
+}
 
 export default ItemCount;

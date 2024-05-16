@@ -4,11 +4,10 @@ const Contacto = () => {
   const { register, handleSubmit} = useForm();
 
   const enviar = (data) => {
-    console.log(data);
+    console.log(data); // Agrer sweet alert para el envio de datos
   }
 
   return (
-
     <div className="container mt-3">
       <h2 className="d-flex justify-content-center ">Contactanos</h2>
       <form className="container mt-3" onSubmit={handleSubmit(enviar)}>
@@ -31,7 +30,7 @@ const Contacto = () => {
         <button className="btn btn-primary d-flex justify-content-center" type="submit">Enviar</button>
       </form>
     </div>
-  );
-};
+  )
+}
 
 export default Contacto;

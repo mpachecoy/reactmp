@@ -7,13 +7,13 @@ const CartWidget = () => {
   const { cantidadTotal } = useContext(Context)
 
   return (
-    <div className="btn patata" href="#link">
+    <div className="d-flex gap-1 btn patata align-items-center" href="#link">
       <LiaCartArrowDownSolid /> Carrito
-      <div> 
-        {cantidadTotal}
+      <div className="border rounded-pill bg-white"> 
+        { cantidadTotal() }
       </div>
     </div>
-  );
+  )
 };
 
 export default CartWidget;

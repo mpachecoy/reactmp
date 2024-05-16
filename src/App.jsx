@@ -8,6 +8,7 @@ import Contacto from "./components/Contacto/Contacto";
 import PageNotFound from "./components/pageNotFound/PageNotFound";
 import { ContextProvider } from "./components/context/CartContext";
 import Cart from "./components/cart/Cart";
+import Checkout from "./components/checkout/Checkout";
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
             <Route path="/item/:id" element={<ItemDetailContainer />} />
             <Route path="/contacto" element={<Contacto />} />
             <Route path="/cart" element={<Cart />} />
+            <Route path="/checkout" element={<Checkout/>}/>
             <Route path="*" element={<PageNotFound />} />
           </Routes>
         </BrowserRouter>

@@ -1,4 +1,5 @@
 import data from './dataProduct.json';
+export const productos = data
 
 export const getProducts = () => {
     return new Promise ((resolve, reject) => {
