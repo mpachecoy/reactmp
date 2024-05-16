@@ -17,8 +17,6 @@ const Checkout = () => {
     const [error, setError] = useState({})
 
     const { cart, getTotal } = useContext(Context)
-    console.log(cart)
-    console.log(getTotal)
 
     const updateUser = (event) => {
         setUsuario((usuario) => ({
@@ -44,7 +42,15 @@ const Checkout = () => {
         return Object.keys(errors).length === 0
     }
 
-   
+    const getOrder = async () => {
+        const isFormValid = validateForm()
+        validateEmails()
+        console.log(isFormValid)
+        console.log(validateEmails)
+    }
+    //
+
+
   return (
     <div>
 
@@ -62,7 +68,7 @@ const Checkout = () => {
         <div className="form-group w-50">
           <input type="text" className="form-control" name='phone' onChange={updateUser} placeholder="Ingrese su telefono"/>
         </div>
-        <button className='btn btn-outline-secondary'> Finalizar Compra </button>
+        <button className='btn btn-outline-secondary' onClick={getOrder}> Finalizar Compra </button>
       </form>
     </div>
   );
