@@ -1,75 +1,116 @@
 import { addDoc, collection, getDoc } from "firebase/firestore";
 import React, { useContext, useState } from "react";
-import Swal from "sweetalert2";
-import Context from "../context/CartContext";
+import Context from '../context/CartContext';
+import { useForm } from "react-hook-form";
 import { db } from "../../config/firebase";
-import { useNavigate } from "react-router-dom";
+import Swal from 'sweetalert2'
 
 const Checkout = () => {
-    const [usuario, setUsuario] = useState({
-        name: '',
-        email: '',
-        repeatedEmail: '',
-        phone: ''
-    })
-
+    const [ pedidoId, setPedidoId ]= useState("")
     const [emailMatch, setEmailMatch] = useState(true)
-    const [error, setError] = useState({})
+    const [ error, setError ] = useState({})
+    const { cart, getTotal, vaciarCarrito } = useContext(Context)
 
-    const { cart, getTotal } = useContext(Context)
+    const { register, handleSubmit } = useForm()
 
-    const updateUser = (event) => {
-        setUsuario((usuario) => ({
-            ...usuario,
-            [event.target.name]: event.target.value
-        }))
-    }
-
-    const validateEmails = () => {
-        if(usuario.email === usuario.repeatedEmail) {
-            setEmailMatch(true)
+    const comprar = (data) => {
+      const validateEmail = () => {
+        console.log(data.email)
+        console.log(data.repeatEmail)
+        if(data.email === data.repeatEmail){
+          setEmailMatch(true)
         }else{
-            setEmailMatch(false)
+          setEmailMatch(false)
         }
-    }
+      }
+      console.log(emailMatch)
 
-    const validateForm = () => {
+      const validateForm = () => {
+        console.log(data.nombre)
         const errors = {}
-        if(!usuario.name){
-            errors.name= "Tenés que agregar un nombre"
+        if(!data.nombre){
+          errors.nombre = 'Tenes que agregar un nombre'
         }
         setError(errors)
         return Object.keys(errors).length === 0
-    }
+      }
 
-    const getOrder = async () => {
-        const isFormValid = validateForm()
-        validateEmails()
-        console.log(isFormValid)
-        console.log(validateEmails)
+      const pedido = {
+        ciente: data,
+        carrito: cart,
+        total: getTotal()
+      }
+
+      const pedidoRef = collection(db, "pedidos")
+
+      const isFormValid = validateForm()
+      validateEmail()
+
+      console.log(validateForm)
+
+      if(isFormValid && emailMatch){
+        addDoc(pedidoRef, pedido)
+        .then((doc) => {
+          setPedidoId(doc.id)
+          Swal.fire({
+            title: 'Muchas gracias por tu compra!',
+            text:`Tu numero de compras es:    ${doc.id}`,
+            icon: 'success',
+            confirmButtonText: 'ACEPTAR'
+          })
+          console.log(pedido)
+          // vaciarCarrito()
+        })
+      }else{
+        console.log("Hay un error en el formulario")
+      }
     }
-    //
 
 
   return (
     <div>
-
-      <form className="d-flex flex-column align-items-center mt-5">
-        <h2>Datos de Facturacion</h2>
-        <div className="form-group w-50 justify-content-center">
-          <input type="text" className="form-control" name='name' onChange={updateUser} placeholder="Ingrese su Nombre"/>
-        </div>
-        <div className="form-group w-50">
-          <input type="email" className="form-control" name='email' onChange={updateUser} placeholder="Ingrese Email"/>
-        </div>
-        <div className="form-group w-50">
-          <input type="email" className="form-control" name='repeatEmail' onChange={updateUser} placeholder="Repita el Email"/>
-        </div>
-        <div className="form-group w-50">
-          <input type="text" className="form-control" name='phone' onChange={updateUser} placeholder="Ingrese su telefono"/>
-        </div>
-        <button className='btn btn-outline-secondary' onClick={getOrder}> Finalizar Compra </button>
-      </form>
+      <div className="container mt-3">
+        <h2 className="d-flex justify-content-center ">Datos de Facturacion</h2>
+        <form className="container mt-3" onSubmit={handleSubmit(comprar)}>
+          <div className="row">
+            <div className="col">
+              <input 
+                type="text" 
+                className="form-control" 
+                placeholder="Nombre" 
+                {...register("nombre")} 
+              />
+            </div>
+            <div className="col">
+              <input 
+                type="number" 
+                className="form-control" 
+                placeholder="Ingrese su telefono" 
+                {...register("telefono")}
+              />
+            </div>
+          </div>
+          <div className="form-group row mt-3">
+            <div className="col">
+              <input 
+                type="email" 
+                className="form-control" 
+                placeholder="Ingrese su email" 
+                {...register("email")}
+              />
+            </div>
+            <div className="col">
+              <input 
+                type="email" 
+                className="form-control" 
+                placeholder="Repita el email" 
+                {...register("repeatEmail")}
+              />
+            </div>
+          </div>
+          <button className="btn btn-primary d-flex justify-content-center" type="submit">Finalizar Compra</button>
+        </form>
+      </div>
     </div>
   );
 };

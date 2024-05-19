@@ -6,11 +6,10 @@ import { doc, getDoc } from "firebase/firestore";
 import { db } from "../../config/firebase";
 
 const ItemDetailContainer = ({}) => {
-  const [item, setItem] = useState(null);
-  const [loading, setLoading] = useState(true);
-  const id = useParams().id;
+  const [item, setItem] = useState(null)
+  const [loading, setLoading] = useState(true)
+  const id = useParams().id
 
-  const navigate = useNavigate();
   useEffect(() => {
     setLoading(true)
     const getProducts = async() => {

@@ -12,7 +12,7 @@ import Checkout from "./components/checkout/Checkout";
 
 function App() {
   return (
-    <div>
+
       <ContextProvider>
         <BrowserRouter>
           <NavBar />
@@ -27,7 +27,7 @@ function App() {
           </Routes>
         </BrowserRouter>
       </ContextProvider>
-    </div>
+
   );
 }
 

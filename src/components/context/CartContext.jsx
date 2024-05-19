@@ -1,9 +1,11 @@
-import React, {createContext, useState} from 'react'
+import React, {createContext, useState, useEffect} from 'react'
 
 const Context = createContext()
 
+const carritoInicial = JSON.parse(localStorage.getItem("cart")) || []
+
 export const ContextProvider = ({ children }) => {
-    const [cart, setCart] = useState([])
+    const [cart, setCart] = useState(carritoInicial)
 
     const addItem = (productoAgregado, cantidad) => {
         const nuevoProducto = {
@@ -36,6 +38,7 @@ export const ContextProvider = ({ children }) => {
     const varciarCarrito = () => {
         setCart([])
     }
+
     const cantidadTotal = () => {
         let total =  0
         cart.forEach((prod) => {
@@ -43,6 +46,9 @@ export const ContextProvider = ({ children }) => {
         })
         return total
     }
+    useEffect(() => {
+      localStorage.setItem("cart", JSON.stringify(cart))
+    }, [cart])
 
   return (
     <Context.Provider
