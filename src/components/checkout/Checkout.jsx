@@ -5,6 +5,7 @@ import { useForm } from "react-hook-form";
 import { db } from "../../config/firebase";
 import Swal from 'sweetalert2'
 
+
 const Checkout = () => {
     const [ pedidoId, setPedidoId ]= useState("")
     const [emailMatch, setEmailMatch] = useState(true)
@@ -15,21 +16,24 @@ const Checkout = () => {
 
     const comprar = (data) => {
       const validateEmail = () => {
-        console.log(data.email)
-        console.log(data.repeatEmail)
         if(data.email === data.repeatEmail){
           setEmailMatch(true)
         }else{
           setEmailMatch(false)
+          console.log('Los correo no coinciden')
         }
       }
-      console.log(emailMatch)
 
       const validateForm = () => {
-        console.log(data.nombre)
         const errors = {}
         if(!data.nombre){
           errors.nombre = 'Tenes que agregar un nombre'
+        }else if(!data.telefono){
+          errors.telefono = 'Tenes que agregar telefono'
+        }else if(!data.email){
+          errors.email = 'Tenes que agregar telefono'
+        }else if(!data.repeatEmail){
+          errors.repeatEmail = 'Tenes que agregar telefono'
         }
         setError(errors)
         return Object.keys(errors).length === 0
@@ -46,8 +50,6 @@ const Checkout = () => {
       const isFormValid = validateForm()
       validateEmail()
 
-      console.log(validateForm)
-
       if(isFormValid && emailMatch){
         addDoc(pedidoRef, pedido)
         .then((doc) => {
@@ -58,11 +60,14 @@ const Checkout = () => {
             icon: 'success',
             confirmButtonText: 'ACEPTAR'
           })
-          console.log(pedido)
-          // vaciarCarrito()
+          vaciarCarrito()
         })
       }else{
-        console.log("Hay un error en el formulario")
+        Swal.fire({
+          title: 'Hay un error en el formulario!',
+          icon: 'error',
+          confirmButtonText: 'ACEPTAR'
+        })
       }
     }
 

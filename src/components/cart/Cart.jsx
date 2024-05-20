@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 import "./Cart.css"
 
 const Cart = () => {
-    const { cart, removerItem, getTotal, varciarCarrito } = useContext(Context)
+    const { cart, removerItem, getTotal, vaciarCarrito } = useContext(Context)
 
     if (cart.length === 0){
         return (
@@ -47,7 +47,7 @@ const Cart = () => {
                             <th className=""></th>
                             <th className="">Total:</th>
                             <th className=""> ${getTotal()}</th>
-                            <th className=""><button className='btn btn-outline-secondary' onClick={() => varciarCarrito()}>Vaciar</button></th>
+                            <th className=""><button className='btn btn-outline-secondary' onClick={() => vaciarCarrito()}>Vaciar</button></th>
                             <th className=""><Link className='btn btn-secondary' to='/checkout'> Finalizar COMPRA</Link></th>
                             <th className=""></th>
                         </tr>

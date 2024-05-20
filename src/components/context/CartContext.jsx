@@ -35,7 +35,7 @@ export const ContextProvider = ({ children }) => {
         const total = cart.reduce((acc, item) => acc + item.precio * item.cantidad, 0)
         return total
     }
-    const varciarCarrito = () => {
+    const vaciarCarrito = () => {
         setCart([])
     }
 
@@ -57,7 +57,7 @@ export const ContextProvider = ({ children }) => {
             addItem,
             removerItem, 
             getTotal, 
-            varciarCarrito,
+            vaciarCarrito,
             cantidadTotal
         }} 
     >
