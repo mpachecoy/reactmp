@@ -30,7 +30,7 @@ const ItemDetail = ({ categoria, nombre, descripcion, precio, img, stock, id }) 
     <Container className="contenedor">
       <Row>
         <Col>
-          <Card className="card-detail">
+          <Card className="container card-detail d-flex">
             <div className="card-img">
               <div id="carouselExampleIndicators" className="carousel slide" data-ride="carousel">
                 <ol className="carousel-indicators">

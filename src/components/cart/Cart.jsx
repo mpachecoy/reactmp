@@ -17,12 +17,12 @@ const Cart = () => {
         )
     }else{
         return (
-                <table className="table justify-content-center align-items-center ">
-                    <thead className='justify-content-center'>
-                        <tr className="table-primary justify-content-center align-items-center">
-                            <th className="align-items-center"></th>
+                <div className="d-flex flex-column cart ">
+                    <thead className=''>
+                        <tr className="head table-primary">
+                            <th className="align-items-center "></th>
                             <th className="">Producto</th>
-                            <th className="">Cantidad</th>
+                            <th className="cantidad-cart">Cantidad</th>
                             <th className="">Precio</th>
                             <th className="">Subtotal</th>
                             <th className=""></th>
@@ -31,10 +31,10 @@ const Cart = () => {
                     <tbody className='align-items-center'>
                         {
                             cart.map((prod) => (
-                             <tr className="justify-content-center align-items-center" key={prod.id}>
+                             <tr className="body-cart" key={prod.id}>
                                 <th className="" ><img className="imagenfinal" src={prod.img} alt="" /></th>
                                 <th className="">{prod.nombre}</th>
-                                <th className="">{prod.cantidad}</th>
+                                <th className="cantidad-cart">{prod.cantidad}</th>
                                 <th className="">{prod.precio}</th>
                                 <th className="">{prod.precio * prod.cantidad}</th>
                                 <th className=""><button className='btn btn-outline-secondary' onClick={() => removerItem(prod.id)}><FaRegTrashCan  /></button></th>
@@ -43,16 +43,15 @@ const Cart = () => {
                         }
                     </tbody>
                     <tfoot className='footer-carrito'>
-                        <tr className="table-primary text-center ">
+                        <tr className="table-primary text-center foot">
                             <th className=""></th>
                             <th className="">Total:</th>
                             <th className=""> ${getTotal()}</th>
                             <th className=""><button className='btn btn-outline-secondary' onClick={() => vaciarCarrito()}>Vaciar</button></th>
                             <th className=""><Link className='btn btn-secondary' to='/checkout'> Finalizar COMPRA</Link></th>
-                            <th className=""></th>
                         </tr>
                     </tfoot>
-                </table>
+                </div>
           )
     }
 }

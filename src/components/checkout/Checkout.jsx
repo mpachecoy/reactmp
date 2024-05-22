@@ -31,10 +31,16 @@ const Checkout = () => {
         }else if(!data.telefono){
           errors.telefono = 'Tenes que agregar telefono'
         }else if(!data.email){
-          errors.email = 'Tenes que agregar telefono'
+          errors.email = 'El casillero del email esta vacio'
         }else if(!data.repeatEmail){
-          errors.repeatEmail = 'Tenes que agregar telefono'
+          errors.repeatEmail = 'El casillero del repetir el email '
         }
+        // Swal.fire({
+        //   title: 'El formulario esta!',
+        //   text:` ${errors.nombre || errors.telefono || errors.email || errors.repeatEmail}`,
+        //   icon: 'error',
+        //   confirmButtonText: 'ACEPTAR'
+        // })
         setError(errors)
         return Object.keys(errors).length === 0
       }
@@ -63,11 +69,11 @@ const Checkout = () => {
           vaciarCarrito()
         })
       }else{
-        Swal.fire({
-          title: 'Hay un error en el formulario!',
-          icon: 'error',
-          confirmButtonText: 'ACEPTAR'
-        })
+        // Swal.fire({
+        //   title: 'Hay un error en el formulario!',
+        //   icon: 'error',
+        //   confirmButtonText: 'ACEPTAR'
+        // })
       }
     }
 
