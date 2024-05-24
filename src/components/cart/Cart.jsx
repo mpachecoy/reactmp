@@ -17,10 +17,10 @@ const Cart = () => {
         )
     }else{
         return (
-                <div className="d-flex flex-column cart ">
+                <table className="d-flex flex-column cart ">
                     <thead className=''>
                         <tr className="head table-primary">
-                            <th className="align-items-center "></th>
+                            <th className=""></th>
                             <th className="">Producto</th>
                             <th className="cantidad-cart">Cantidad</th>
                             <th className="">Precio</th>
@@ -51,7 +51,7 @@ const Cart = () => {
                             <th className=""><Link className='btn btn-secondary' to='/checkout'> Finalizar COMPRA</Link></th>
                         </tr>
                     </tfoot>
-                </div>
+                </table>
           )
     }
 }
